@@ -1,0 +1,12 @@
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]   
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Build bare love package
+        uses: love-actions/love-actions-core@v1
+        with:
+          build-list: ./assets/ ./frameworks/ ./config.lua ./main.lua
+          package-path: ./bare/my_game.love
