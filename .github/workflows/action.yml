@@ -1,4 +1,4 @@
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is creating Lua Love game files 🚀
 on: [push]   
 jobs:
   Explore-GitHub-Actions:
@@ -8,7 +8,7 @@ jobs:
     # Build the applications
     - uses: nhartland/love-build@master
       with:
-       app_name: 'hello_world'
+       app_name: 'snake'
        love_version: '11.4'
     # Upload the built applications
     - uses: actions/upload-artifact@v1
