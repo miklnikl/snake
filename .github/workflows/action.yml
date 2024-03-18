@@ -4,8 +4,14 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - name: Build bare love package
-        uses: love-actions/love-actions-core@v1
-        with:
-          package-path: ./dist/game.love
+    - uses: actions/checkout@v3
+    # Build the applications
+    - uses: nhartland/love-build@master
+      with:
+       app_name: 'hello_world'
+       love_version: '11.4'
+    # Upload the built applications
+    - uses: actions/upload-artifact@v1
+      with:
+        name: built-applications
+        path: 'release'
